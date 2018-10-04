@@ -15,6 +15,6 @@ Surely I added a bunch of errors.
 I don’t know what the point of doing that is.
 
 
-""""
-The carefree mindset that an adult goes into to escape mental health issues. Being it little space is pretty much age regression.
-""""
+
+>The carefree mindset that an adult goes into to escape mental health issues. Being it little space is pretty much age regression.
+
