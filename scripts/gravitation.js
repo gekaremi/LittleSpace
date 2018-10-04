@@ -1,7 +1,7 @@
 function applyVelocity(body) {
     //changes each bodies x and y co-ordinates according to its velocity
-    body.x += body.vx;
-    body.y += body.vy;
+    body.x += body.vx + 0.5*body.ax;
+    body.y += body.vy + 0.5*body.ay;
 }
 
 
@@ -9,12 +9,15 @@ function applyVelocity(body) {
 
 function applyAcceleration(body) {
     //calculates acceleration based on netwons 2nd law F=ma
+    //Leapfrog integration method
+    old_a_x = body.ax
+    old_a_y = body.ay
     body.ax = body.fx / body.m;
     body.ay = body.fy / body.m;
 
     //applies acceleration to a bodies velocity
-    body.vx += body.ax;
-    body.vy += body.ay;
+    body.vx += 0.5*(body.ax + old_a_x);
+    body.vy += 0.5*(body.ay + old_a_y);
 }
 
 
@@ -43,8 +46,8 @@ function applyForceFromGravity(bodies) {
 
 
 
-                //calculates force based on Sir Isaac Newtons law of universial gravitation (F=(G m_1 m_2)/|r|^3*r where r is vector)
-                F = (gravitationalConstant * bodies[i].m * bodies[j].m) / Math.pow(dMag,3);
+                //calculates force based on Sir Isaac Newtons law of universial gravitation (F=(G m_1 m_2)/(|r|+eps)^3*r where r is vector)
+                F = (gravitationalConstant * bodies[i].m * bodies[j].m) / (Math.pow(dMag,3) + 3);
                 //splits force vector into its componants (x and y) so that they can be applied to the bodies
                 fX = dX*F;
                 fY = dY*F;

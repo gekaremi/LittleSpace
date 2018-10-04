@@ -15,9 +15,12 @@ simulations[0] = [
 
 //2 small boddies orbiting much larger boddy
 simulations[1] = [
-    {x: 500, y: 500,m: 120,vx: 0,vy: 0,ax: 0,ay: 0,fx: 0,fy: 0, color: "rgb(255,125,0)"},
-    {x: 500, y: 50,m: 2,vx: -4.4,vy: 0,ax: 0,ay: 0,fx: 0,fy: 0, color: "rgb(0,125,255)"}, 
-    {x: 500, y: 900,m: 2,vx: 5,vy: 0,ax: 0,ay: 0,fx: 0,fy: 0, color: "rgb(0,125,255)"}
+    {x: 800, y: 500,m: 120,vx: 0,vy: 0,ax: 0,ay: 0,fx: 0,fy: 0, color: "rgb(255,125,0)"},
+
+    {x: 800, y: 900,m: 2,vx: 5,vy: 0,ax: 0,ay: 0,fx: 0,fy: 0, color: "rgb(0,125,255)"},
+
+    {x: 200, y: 500,m: 2,vx: 0,vy: 5,ax: 0,ay: 0,fx: 0,fy: 0, color: "rgb(0,125,255)"}, 
+    {x: 1400, y: 500,m: 2,vx: 0,vy: -5,ax: 0,ay: 0,fx: 0,fy: 0, color: "rgb(0,125,255)"},
 ]; 
 
 
